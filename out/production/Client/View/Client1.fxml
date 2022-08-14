@@ -26,6 +26,5 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Button>
-      <Label fx:id="lblclient1name" layoutX="40.0" layoutY="127.0" prefHeight="26.0" prefWidth="121.0" text="Label" />
    </children>
 </AnchorPane>
