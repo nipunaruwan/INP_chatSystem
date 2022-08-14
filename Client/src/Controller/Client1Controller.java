@@ -20,7 +20,7 @@ public class Client1Controller implements Initializable {
     static Socket socket = null;
     static DataInputStream dataInputStream;
     static DataOutputStream dataOutputStream;
-    public Label lblclient1name;
+    public Label lblname1;
 
     String messageIn = "";
     @Override
@@ -53,7 +53,7 @@ public class Client1Controller implements Initializable {
 
         String reply ="";
         reply=txtclientone.getText();
-        txtclientonearea.appendText(("Dulan:"+" "+reply.trim()));
+        txtclientonearea.appendText(("Dulan:"+" "+reply.trim()+"\n"));
         dataOutputStream.writeUTF(reply);
         txtclientone.setText("");
     }

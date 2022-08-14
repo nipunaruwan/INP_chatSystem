@@ -19,12 +19,14 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <TextArea layoutX="23.0" layoutY="77.0" prefHeight="455.0" prefWidth="458.0" />
-      <TextField layoutX="27.0" layoutY="552.0" prefHeight="32.0" prefWidth="366.0" promptText="send a massenge" />
+      <TextArea fx:id="txttextareaserver" layoutX="23.0" layoutY="77.0" prefHeight="455.0" prefWidth="458.0" />
+      <TextField fx:id="txtserver" layoutX="27.0" layoutY="552.0" prefHeight="32.0" prefWidth="366.0" promptText="send a massenge" />
       <Button layoutX="410.0" layoutY="551.0" mnemonicParsing="false" onAction="#btnserversend" prefHeight="32.0" prefWidth="69.0" style="-fx-background-color: blue;" text="Send" textFill="#eee7e7">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Button>
+      <Label fx:id="lbllable" layoutX="43.0" layoutY="115.0" prefHeight="17.0" prefWidth="47.0" />
+      <Label fx:id="lblname1" layoutX="62.0" layoutY="144.0" />
    </children>
 </AnchorPane>

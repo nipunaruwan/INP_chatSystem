@@ -1,5 +1,6 @@
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
@@ -19,6 +20,8 @@ public class ServerFormController implements Initializable {
     static DataInputStream dataInputStream;
     static DataOutputStream dataOutputStream;
     static Socket socket;
+    public Label lbllable;
+    public Label lblname1;
 
     String messageIn = "";
     @Override
@@ -35,7 +38,7 @@ new Thread(()->{
 
         while (!messageIn.equals("end")) {
         messageIn=dataInputStream.readUTF();
-        txttextareaserver.appendText("\nClient"+ messageIn.trim()+"\n");
+        txttextareaserver.appendText("\n Dulan :"+ messageIn.trim()+"\n");
         }
 
     } catch (IOException e) {
@@ -47,7 +50,7 @@ new Thread(()->{
     public void btnserversend(ActionEvent actionEvent) throws IOException {
         String text = txtserver.getText();
 //        System.out.println(text);
-        txttextareaserver.appendText("Server:" +text.trim());
+        txttextareaserver.appendText("Server:" +text.trim()+"\n");
         dataOutputStream.writeUTF(text);
         txtserver.setText("");
 

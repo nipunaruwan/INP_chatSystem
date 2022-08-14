@@ -14,7 +14,7 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <Label layoutX="240.0" layoutY="27.0" prefHeight="26.0" prefWidth="47.0" text="Nipun">
+      <Label fx:id="lblname2" layoutX="240.0" layoutY="27.0" prefHeight="26.0" prefWidth="47.0" text="Nipun">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
