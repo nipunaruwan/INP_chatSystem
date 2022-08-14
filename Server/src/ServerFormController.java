@@ -20,20 +20,36 @@ public class ServerFormController implements Initializable {
     static DataOutputStream dataOutputStream;
     static Socket socket;
 
+    String messageIn = "";
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 new Thread(()->{
     try {
         serverSocket= new ServerSocket(5000);
-        System.out.println("");
+        System.out.println("Server Started Waiting for client! .....");
+        socket=serverSocket.accept();
+        System.out.println("Client Accepted");
+
+        dataInputStream=new DataInputStream(socket.getInputStream());
+        dataOutputStream=new DataOutputStream(socket.getOutputStream());
+
+        while (!messageIn.equals("end")) {
+        messageIn=dataInputStream.readUTF();
+        txttextareaserver.appendText("\nClient"+ messageIn.trim()+"\n");
+        }
+
     } catch (IOException e) {
         e.printStackTrace();
     }
-});
+}).start();
     }
 
-    public void btnserversend(ActionEvent actionEvent) {
-
+    public void btnserversend(ActionEvent actionEvent) throws IOException {
+        String text = txtserver.getText();
+//        System.out.println(text);
+        txttextareaserver.appendText("Server:" +text.trim());
+        dataOutputStream.writeUTF(text);
+        txtserver.setText("");
 
     }
 
