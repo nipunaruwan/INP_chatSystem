@@ -53,7 +53,7 @@ public class Client1Controller implements Initializable {
 
         String reply ="";
         reply=txtclientone.getText();
-        txtclientonearea.appendText(("\\t\\t\\t\\t\\t\\t\\t\\tmalith:"+reply.trim()));
+        txtclientonearea.appendText(("Dulan:"+" "+reply.trim()));
         dataOutputStream.writeUTF(reply);
         txtclientone.setText("");
     }
