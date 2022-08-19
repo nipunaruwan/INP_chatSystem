@@ -13,51 +13,32 @@ import java.io.IOException;
 
 public class LoginformController {
     public JFXTextField txtuname;
-    public JFXPasswordField txtpassword;
 
+
+    static String name;
     public void btnsignin(ActionEvent actionEvent) throws IOException {
-        if (txtuname.getText().equalsIgnoreCase("Dulan") && txtpassword.getText().
-                equalsIgnoreCase("1234")) {
-            new Alert(Alert.AlertType.CONFIRMATION, "Welcome Dulan ").show();
-            Parent load = FXMLLoader.load(getClass().getResource("../View/Client1.fxml"));
-            Scene scene = new Scene(load);
-            Stage stage = new Stage();
-            stage.setScene(scene);
-            stage.setResizable(false);
-            stage.show();
-
-
-        } else if (txtuname.getText().equalsIgnoreCase("Nipun") && txtpassword.getText().
-                equalsIgnoreCase("1235")) {
-            new Alert(Alert.AlertType.CONFIRMATION, "Welcome Nipun ").show();
-            Parent load = FXMLLoader.load(getClass().getResource("../View/Client2.fxml"));
-            Scene scene = new Scene(load);
-            Stage stage = new Stage();
-            stage.setScene(scene);
-            stage.setResizable(false);
-            stage.show();
-
-
-        } else if (txtuname.getText().equalsIgnoreCase("Sadun") && txtpassword.getText().
-                equalsIgnoreCase("1236")) {
-            new Alert(Alert.AlertType.CONFIRMATION, "Welcome Sadun ").show();
-            Parent load = FXMLLoader.load(getClass().getResource("../View/Client3.fxml"));
-            Scene scene = new Scene(load);
-            Stage stage = new Stage();
-            stage.setScene(scene);
-            stage.setResizable(false);
-            stage.show();
-
+       name=txtuname.getText();
+        if (name.equals("")) {
+            new Alert(Alert.AlertType.WARNING, "Please check your Username").showAndWait();
+            clearloginOnAction();
 
         } else {
-            new Alert(Alert.AlertType.WARNING, "Please check your Username and Password").show();
-clearloginOnAction();
+            Stage stage=(Stage) txtuname.getScene().getWindow();
+            stage.close();
+            Stage stage1=new Stage();
+            stage1.setScene(new Scene(FXMLLoader.load(getClass().getResource("../View/Client1.fxml"))));
+            stage1.setResizable(false);
+            stage1.setTitle(name);
+            stage1.centerOnScreen();
+            stage1.show();
         }
+
     }
+
 
         public void clearloginOnAction() {
             txtuname.clear();
-            txtpassword.clear();
+
         }
 
         }
