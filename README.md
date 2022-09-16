@@ -1,5 +1,6 @@
 # INP_chatSystem
-using java client and server👁️
+using java client and server👁️ 
+using client server architecture
 <h1>technologies-java,javafx,socket programming</h1>
 
 ![Screenshot 2022-09-14 143907](https://user-images.githubusercontent.com/92322715/190601329-8cca3300-5d7e-4e3e-aa76-7016b6a6d07a.png)
